@@ -13,8 +13,42 @@ int main() {
     double densidadepop;
     int super;
 
+    int menu;
+    int batalha = 0;
+
+
+//menu interativo
+    printf("Olá, bem-vindo ao Maker de Cards do Super Trunfo Cidades!\n\n");
+
+do{
+
+    printf("O que gostaria de fazer?\n");
+    printf("1. Criar Minhas Cartas\n");
+    printf("2. Batalhar\n");
+    printf("3. Sair do Maker\n");
+    scanf("%d", &menu);
+
+    switch(menu) {
+        case 1:
+            printf("Vamos começar...\n\n");
+            batalha++;
+            break;
+        case 2:
+            if (batalha == 0) {
+                printf("Você ainda não possui cartas criadas!\n\n");
+                break;
+            } 
+            break;
+        case 3: 
+            printf("Saindo...\n\n");
+            return 0;
+            
+    }
+
+} while (batalha == 0);
+
 //bloco de dados destinado à coleta dos dados das cartas:
-    printf("Olá, bem-vindo ao Maker de Cards do Super Trunfo Cidades\nPara começar, digite o nome da cidade:\n");
+    printf("Digite o nome da primeira cidade:\n");
     scanf("%14s", nome); //Uso do núemero 14 antes do s em #s para assegurar que o usuário não ultrapasse o limite de caracteres definido.
 
     printf("%s possui quantos habitantes?\n", nome); //utilização da primeira informação concebida pela usuário sendo representado pelo "%s".
@@ -85,6 +119,8 @@ dois tipos diferentes de dados.*/
 //Impressão na tela de todos os dados da carta
     printf ("Carta gerada com sucesso!\n\n");
 
+
+    
     printf ("Código: A02\nNome: %s\nPopulação: %d habitantes\nÁrea: %.1lfkm²\nPIB(Produto Interno Bruto): R$%d\nQuantidade de Pontos Turísticos: %d\nPIB per Capita: R$%.2lf\nDensidade Populacional: %.2lf Habitantes por Quilômetro Quadrado\n~SUPER!:~ %d\n\n",
     nome2, populacao2, area2, pib2, turistico2, pibpercap2, densidadepop2, super2);
 
@@ -121,8 +157,8 @@ int ponto2 = 0;
         } else {printf("PIB Per Capita: %s = %s\n", nome, nome2);
     }
 
-                if (densidadepop > densidadepop2) {printf("Densidade Populacional: %s > %s\n", nome, nome2); ponto++;
-            } else if (densidadepop < densidadepop2) {printf("Densidade Populacional: %s < %s\n", nome, nome2); ponto2++;
+                if (densidadepop > densidadepop2) {printf("Densidade Populacional: %s > %s\n", nome, nome2); ponto2++;
+            } else if (densidadepop < densidadepop2) {printf("Densidade Populacional: %s < %s\n", nome, nome2); ponto++;
         } else {printf("Densidade Populacional: %s = %s\n", nome, nome2);
     }
 
