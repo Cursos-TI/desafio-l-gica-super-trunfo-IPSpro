@@ -14,6 +14,7 @@ int main() {
     int super;
 
     int menu;
+    int menu2;
     int batalha = 0;
 
 
@@ -22,11 +23,12 @@ int main() {
 
 do{
 
-    printf("O que gostaria de fazer?\n");
+    printf("O que gostaria de fazer agora?\n");
     printf("1. Criar Minhas Cartas\n");
     printf("2. Batalhar\n");
     printf("3. Sair do Maker\n");
     scanf("%d", &menu);
+    printf("\n");
 
     switch(menu) {
         case 1:
@@ -34,14 +36,14 @@ do{
             batalha++;
             break;
         case 2:
-            if (batalha == 0) {
-                printf("Você ainda não possui cartas criadas!\n\n");
-                break;
-            } 
+            printf("Você ainda não possui cartas criadas!\n\n");
             break;
         case 3: 
             printf("Saindo...\n\n");
             return 0;
+        default:
+            printf("esta nãoé uma opção válida!\n\n");
+            break;
             
     }
 
@@ -119,58 +121,146 @@ dois tipos diferentes de dados.*/
 //Impressão na tela de todos os dados da carta
     printf ("Carta gerada com sucesso!\n\n");
 
-
-    
     printf ("Código: A02\nNome: %s\nPopulação: %d habitantes\nÁrea: %.1lfkm²\nPIB(Produto Interno Bruto): R$%d\nQuantidade de Pontos Turísticos: %d\nPIB per Capita: R$%.2lf\nDensidade Populacional: %.2lf Habitantes por Quilômetro Quadrado\n~SUPER!:~ %d\n\n",
     nome2, populacao2, area2, pib2, turistico2, pibpercap2, densidadepop2, super2);
 
-    printf("Vamos ver qual delas é a mais forte: --------------------------\n\n");
+do {
+    printf("O que gostaria de fazer agora?\n\n");
+    printf("1. Batalhar\n");
+    printf("2. Sair do Maker\n");
+    scanf("%d", &menu);
+    printf("\n");
 
+    switch(menu) {
+        case 1:
+            printf("Qual atributo gostaria de comparar?\n\n");
+            printf("1. População\n");
+            printf("2. Área\n");
+            printf("3. PIB\n");
+            printf("4. Número de Pontos Turísticos\n");
+            printf("5. Pib per Capita\n");
+            printf("6. Densidade populacional\n");
+            printf("7. SUPER\n");
+            printf("8. TODOS OS ATRIBUTOS\n");
+            scanf("%d", &menu2);
+            printf("\n");
 
-//Bloco de códigos para o sistema de compração. (Compreendo a existência de uma forma melhor que essa utilizada por mim, entretando, ainda não a domino.)
+            switch(menu2) {
+                case 1:
+                    printf("Vamos ver qual delas é a mais forte: --------------------------\n\n");
+                    if (populacao > populacao2) {printf("População: %s > %s\n", nome, nome2); 
+                    } else if (populacao < populacao2) {printf("População: %s < %s\n", nome, nome2); 
+                } else {printf("População: %s = %s\n", nome, nome2);     
+            }
+            break;
 
-int ponto = 0;
-int ponto2 = 0;
+                case 2: 
+                    printf("Vamos ver qual delas é a mais forte: --------------------------\n\n");
+                    if (area > area2) {printf("Área: %s > %s\n", nome, nome2); 
+                    } else if (area < area2) {printf("População: %s < %s\n", nome, nome2); 
+                } else {printf("População: %s = %s\n", nome, nome2);
+            }
+            break;
 
-                 if (populacao > populacao2) {printf("População: %s > %s\n", nome, nome2); ponto++;
-            } else if (populacao < populacao2) {printf("População: %s < %s\n", nome, nome2); ponto2++;
-        } else {printf("População: %s = %s\n", nome, nome2);
-    }
+                case 3: 
+                    printf("Vamos ver qual delas é a mais forte: --------------------------\n\n");
+                    if (pib > pib2) {printf("PIB: %s > %s\n", nome, nome2);
+                    } else if (pib < pib2) {printf("PIB: %s < %s\n", nome, nome2); 
+                } else {printf("PIB: %s = %s\n", nome, nome2);
+            }
+            break;
 
-                 if (area > area2) {printf("Área: %s > %s\n", nome, nome2); ponto++;
-            } else if (area < area2) {printf("População: %s < %s\n", nome, nome2); ponto2++;
-        } else {printf("População: %s = %s\n", nome, nome2);
-    }
+                case 4:
+                    printf("Vamos ver qual delas é a mais forte: --------------------------\n\n");
+                    if (turistico > turistico2) {printf("Pontos Turísticos: %s > %s\n", nome, nome2); 
+                    } else if (turistico < turistico2) {printf("Pontos Turísticos: %s < %s\n", nome, nome2);
+                } else {printf("Pontos Turísticos: %s = %s\n", nome, nome2);
+            }
+            break;
 
-                if (pib > pib2) {printf("PIB: %s > %s\n", nome, nome2); ponto++;
-            } else if (pib < pib2) {printf("PIB: %s < %s\n", nome, nome2); ponto2++;
-        } else {printf("PIB: %s = %s\n", nome, nome2);
-    }
+                case 5:
+                    printf("Vamos ver qual delas é a mais forte: --------------------------\n\n");
+                    if (pibpercap > pibpercap2) {printf("PIB Per Capita: %s > %s\n", nome, nome2);
+                    } else if (pibpercap < pibpercap2) {printf("PIB Per Capita: %s < %s\n", nome, nome2);
+                } else {printf("PIB Per Capita: %s = %s\n", nome, nome2);
+            }
+            break;
 
-                 if (turistico > turistico2) {printf("Pontos Turísticos: %s > %s\n", nome, nome2); ponto++;
-            } else if (turistico < turistico2) {printf("Pontos Turísticos: %s < %s\n", nome, nome2); ponto2++;
-        } else {printf("Pontos Turísticos: %s = %s\n", nome, nome2);
-    }
+                case 6:
+                    printf("Vamos ver qual delas é a mais forte: --------------------------\n\n");
+                    if (densidadepop > densidadepop2) {printf("Densidade Populacional: %s > %s\n", nome, nome2);
+                    } else if (densidadepop < densidadepop2) {printf("Densidade Populacional: %s < %s\n", nome, nome2);
+                } else {printf("Densidade Populacional: %s = %s\n", nome, nome2);
+            }
+            break;
 
-                 if (pibpercap > pibpercap2) {printf("PIB Per Capita: %s > %s\n", nome, nome2); ponto++;
-            } else if (pibpercap < pibpercap2) {printf("PIB Per Capita: %s < %s\n", nome, nome2); ponto2++;
-        } else {printf("PIB Per Capita: %s = %s\n", nome, nome2);
-    }
+                case 7:
+                    printf("Vamos ver qual delas é a mais forte: --------------------------\n\n");
+                    if (super > super2) {printf("~SUPER!:~ %s > %s\n\n", nome, nome2);
+                    } else if (super < super2) {printf("~SUPER!:~ %s < %s\n\n", nome, nome2);
+                } else {printf("~SUPER!:~ %s = %s\n\n", nome, nome2);
+            }
+            break;
 
-                if (densidadepop > densidadepop2) {printf("Densidade Populacional: %s > %s\n", nome, nome2); ponto2++;
-            } else if (densidadepop < densidadepop2) {printf("Densidade Populacional: %s < %s\n", nome, nome2); ponto++;
-        } else {printf("Densidade Populacional: %s = %s\n", nome, nome2);
-    }
+                case 8:
+                    printf("Vamos ver qual delas é a mais forte: --------------------------\n\n");
+                    int ponto = 0;
+                    int ponto2 = 0;
 
-                 if (super > super2) {printf("~SUPER!:~ %s > %s\n\n", nome, nome2); ponto++;
-            } else if (super < super2) {printf("~SUPER!:~ %s < %s\n\n", nome, nome2); ponto2++;
-        } else {printf("~SUPER!:~ %s = %s\n\n", nome, nome2);
-    }
+                                if (populacao > populacao2) {printf("População: %s > %s\n", nome, nome2); ponto++;
+                            } else if (populacao < populacao2) {printf("População: %s < %s\n", nome, nome2); ponto2++;
+                        } else {printf("População: %s = %s\n", nome, nome2);
+                    }
 
-    if (ponto > ponto2) {printf("%s, CIDADE A01 É A CAMPEÃ!\n\n", nome);
-            } else if (ponto < ponto2) {printf("%s, CIDADE A02 É A CAMPEÃ!\n\n", nome2);
-        } else {printf("WOW!! AS CIDADES %s E %s EMPATARAM!\n\n", nome, nome2);
-    }
+                                if (area > area2) {printf("Área: %s > %s\n", nome, nome2); ponto++;
+                            } else if (area < area2) {printf("População: %s < %s\n", nome, nome2); ponto2++;
+                        } else {printf("População: %s = %s\n", nome, nome2);
+                    }
+
+                                if (pib > pib2) {printf("PIB: %s > %s\n", nome, nome2); ponto++;
+                            } else if (pib < pib2) {printf("PIB: %s < %s\n", nome, nome2); ponto2++;
+                        } else {printf("PIB: %s = %s\n", nome, nome2);
+                    }
+
+                                if (turistico > turistico2) {printf("Pontos Turísticos: %s > %s\n", nome, nome2); ponto++;
+                            } else if (turistico < turistico2) {printf("Pontos Turísticos: %s < %s\n", nome, nome2); ponto2++;
+                        } else {printf("Pontos Turísticos: %s = %s\n", nome, nome2);
+                    }
+
+                                if (pibpercap > pibpercap2) {printf("PIB Per Capita: %s > %s\n", nome, nome2); ponto++;
+                            } else if (pibpercap < pibpercap2) {printf("PIB Per Capita: %s < %s\n", nome, nome2); ponto2++;
+                        } else {printf("PIB Per Capita: %s = %s\n", nome, nome2);
+                    }
+
+                                if (densidadepop > densidadepop2) {printf("Densidade Populacional: %s > %s\n", nome, nome2); ponto2++;
+                            } else if (densidadepop < densidadepop2) {printf("Densidade Populacional: %s < %s\n", nome, nome2); ponto++;
+                        } else {printf("Densidade Populacional: %s = %s\n", nome, nome2);
+                    }
+
+                                if (super > super2) {printf("~SUPER!:~ %s > %s\n\n", nome, nome2); ponto++;
+                            } else if (super < super2) {printf("~SUPER!:~ %s < %s\n\n", nome, nome2); ponto2++;
+                        } else {printf("~SUPER!:~ %s = %s\n\n", nome, nome2);
+                    }
+
+                                if (ponto > ponto2) {printf("%s, CIDADE A01 É A CAMPEÃ!\n\n", nome);
+                            } else if (ponto < ponto2) {printf("%s, CIDADE A02 É A CAMPEÃ!\n\n", nome2);
+                        } else {printf("WOW!! AS CIDADES %s E %s EMPATARAM!\n\n", nome, nome2);
+                    }
+
+                    break;
+
+                default:
+                    printf("esta não é uma opção válida!\n\n");
+                    break;
+            }
+            break;
+        case 2:
+        printf("Saindo...\n");
+        return 0;
+        }
+
+    } while (batalha == 1);
+
 
     return 0;
 }
